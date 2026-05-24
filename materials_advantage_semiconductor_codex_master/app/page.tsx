@@ -73,6 +73,8 @@ export default function Home() {
         </p>
         <nav>
           <a href="#research">Why Research</a>
+          <a href="/materials-advantage">Mentorship Docs</a>
+          <a href="/semiconductor">Semiconductor Docs</a>
           <a href="#meetings">Three Meetings</a>
           <a href="#playbook">Research Playbook</a>
           <a href="#semiconductor">Semiconductor Guide</a>
