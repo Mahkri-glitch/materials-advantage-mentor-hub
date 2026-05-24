@@ -1,4 +1,11 @@
-import { faculty, featureRoadmap, meetingTypes, pathways, researchEntryModules, ucfResources } from "../src/data/siteContent";
+import {
+  faculty,
+  featureRoadmap,
+  meetingTypes,
+  pathways,
+  researchEntryModules,
+  ucfResources,
+} from "../src/data/siteContent";
 
 function Section({ id, title, children }: { id?: string; title: string; children: React.ReactNode }) {
   return (
@@ -10,12 +17,46 @@ function Section({ id, title, children }: { id?: string; title: string; children
   );
 }
 
+const mentorResponsibilities = [
+  "Set clear expectations for communication, meeting cadence, and boundaries.",
+  "Listen first, then guide. Do not assume the student already knows the right path.",
+  "Give honest feedback without making students feel behind or incapable.",
+  "Help students build independence by asking them to own the next step.",
+  "Refer students out when something is outside your scope.",
+];
+
+const menteeResponsibilities = [
+  "Show up prepared with questions, updates, or a draft to review.",
+  "Follow through on action items between meetings.",
+  "Ask for clarity early instead of waiting until things pile up.",
+  "Be honest about uncertainty, workload, and goals.",
+  "Respect mentor time and communicate when plans change.",
+];
+
+const meetingDeliverables: Record<string, string> = {
+  "Initial Mentor-Mentee Meeting": "A one-page next-step plan: top interests, one short-term action, and a draft outreach target list.",
+  "Mid-Semester Mentee Check-In": "A progress update with what worked, what did not, and a revised next-step plan.",
+  "Mentor Philosophy Meeting": "A written mentor philosophy and office-hour support scope that can be shared with mentees.",
+};
+
+const semiconductorBackbone = [
+  "Process & manufacturing (deposition, etch, metrology, yield thinking)",
+  "Materials & devices (thin films, interfaces, reliability, performance)",
+  "Design & computing (circuit/device modeling, simulation, data workflow)",
+  "Packaging & integration (thermal, interconnect, advanced integration)",
+  "Quantum & photonics (quantum materials, optoelectronics, photonic systems)",
+  "Data & AI (process optimization, failure analysis, predictive tools)",
+];
+
 export default function Home() {
-  const grouped = researchEntryModules.reduce<Record<string, typeof researchEntryModules[number][]>>((acc, item) => {
-    acc[item.category] ??= [];
-    acc[item.category].push(item);
-    return acc;
-  }, {});
+  const grouped = researchEntryModules.reduce<Record<string, (typeof researchEntryModules)[number][]>>(
+    (acc, item) => {
+      acc[item.category] ??= [];
+      acc[item.category].push(item);
+      return acc;
+    },
+    {},
+  );
 
   return (
     <main>
@@ -23,15 +64,17 @@ export default function Home() {
         <span className="badge">Mentorship + Research Entry Hub</span>
         <h1>Entering Research and Mentor Resources</h1>
         <p className="heroText">
-          A Materials Advantage @ UCF mentoring hub for students entering research,
-          exploring technical fields, and building career direction.
+          A Materials Advantage @ UCF mentoring hub for students entering research, exploring technical fields,
+          and building career direction.
         </p>
         <p className="callout">
-          You do not need to have your whole career figured out. Bring your questions,
-          interests, and uncertainty. This program helps you find a starting point.
+          You do not need to have your whole career figured out. Bring your questions, interests, and uncertainty.
+          This program helps you find a starting point.
         </p>
         <nav>
           <a href="#research">Why Research</a>
+          <a href="/materials-advantage">Mentorship Docs</a>
+          <a href="/semiconductor">Semiconductor Docs</a>
           <a href="#meetings">Three Meetings</a>
           <a href="#playbook">Research Playbook</a>
           <a href="#semiconductor">Semiconductor Guide</a>
@@ -42,14 +85,12 @@ export default function Home() {
       <Section id="research" title="Why Research Matters for Any Career Path">
         <div className="twoCol">
           <p>
-            Research is not only for students who already know they want graduate school. It helps
-            students learn how to work through unclear problems, explain technical ideas, build useful
-            stories for interviews, and figure out what kind of work they actually like.
+            Research is not just for graduate school. It helps you think through unclear problems, test what kind of
+            work you enjoy, and build technical stories for interviews, internships, and full-time roles.
           </p>
           <p>
-            For industry, research can show initiative and technical depth. For academia, it shows that
-            students understand what research feels like. For any pathway, it builds confidence,
-            communication, problem-solving, and relationships with mentors.
+            Whether you are aiming for industry, grad school, semiconductors, or still figuring it out, research helps
+            you build communication, confidence, mentor relationships, and real decision-making skills.
           </p>
         </div>
       </Section>
@@ -57,13 +98,30 @@ export default function Home() {
       <Section title="Why Mentoring Matters">
         <div className="twoCol">
           <p>
-            Mentoring is more than advising. Advising gives information. Mentoring helps students grow
-            through trust, honest feedback, listening, and repeated conversations.
+            Advising gives information. Mentoring helps growth. Good mentoring is built on trust, respect, listening,
+            clear expectations, feedback, and helping students become independent.
           </p>
           <p>
-            A good mentor does not need to have every answer. A good mentor helps the student ask better
-            questions, find the right people, and take the next step.
+            Mentoring is not about having perfect answers. It is about helping someone take the next real step when
+            they feel stuck.
           </p>
+        </div>
+        <div className="grid topGap">
+          <article className="card">
+            <h3>Mentor Responsibilities</h3>
+            <ul>{mentorResponsibilities.map((item) => <li key={item}>{item}</li>)}</ul>
+          </article>
+          <article className="card">
+            <h3>Mentee Responsibilities</h3>
+            <ul>{menteeResponsibilities.map((item) => <li key={item}>{item}</li>)}</ul>
+          </article>
+          <article className="card">
+            <h3>Support Without Overstepping</h3>
+            <p>
+              Mentors can guide on research, classes, outreach, and career direction. They should avoid acting as a
+              therapist, making decisions for the student, or creating dependency.
+            </p>
+          </article>
         </div>
       </Section>
 
@@ -71,9 +129,14 @@ export default function Home() {
         <div className="grid">
           {meetingTypes.map((meeting) => (
             <article className="card" key={meeting.title}>
-              <span className="tag">{meeting.length}</span>
+              <span className="tag">Suggested length: {meeting.length}</span>
               <h3>{meeting.title}</h3>
-              <p>{meeting.purpose}</p>
+              <p>
+                <strong>Purpose:</strong> {meeting.purpose}
+              </p>
+              <p>
+                <strong>Deliverable:</strong> {meetingDeliverables[meeting.title]}
+              </p>
               <details>
                 <summary>Sample questions</summary>
                 <ul>{meeting.questions.map((q) => <li key={q}>{q}</li>)}</ul>
@@ -85,17 +148,22 @@ export default function Home() {
 
       <Section title="Mentor Office Hours">
         <div className="grid">
-          <article className="card"><h3>General Office Hours</h3><p>For research, classes, resumes, professor emails, and general career direction.</p></article>
-          <article className="card"><h3>Field-Specific Office Hours</h3><p>For semiconductors, biomaterials, polymers, metals, ceramics, computational materials, or data skills.</p></article>
-          <article className="card"><h3>Appointment-Based Help</h3><p>For professor email review, research group selection, REU/internship planning, or more personal questions.</p></article>
+          <article className="card">
+            <h3>General Office Hours</h3>
+            <p>Open support for professor emails, resume review, research readiness, and career direction.</p>
+          </article>
+          <article className="card">
+            <h3>Field-Specific Office Hours</h3>
+            <p>Dedicated help for semiconductors, polymers, biomaterials, manufacturing, ceramics, and computation.</p>
+          </article>
+          <article className="card">
+            <h3>Appointment-Based Help</h3>
+            <p>For research group selection, REU/internship planning, or deeper one-on-one roadmap conversations.</p>
+          </article>
         </div>
       </Section>
 
       <Section id="playbook" title="Research Entry Playbook">
-        <p className="callout">
-          This playbook turns the hidden process of entering research into steps: find labs, read enough
-          to ask better questions, reach out like a real person, follow up once, and build trust over time.
-        </p>
         {Object.entries(grouped).map(([category, items]) => (
           <div className="moduleGroup" key={category}>
             <h3>{category}</h3>
@@ -105,7 +173,7 @@ export default function Home() {
                   <h4>{item.title}</h4>
                   <p>{item.humanCopy}</p>
                   <details>
-                    <summary>Key points</summary>
+                    <summary>Practical checkpoints</summary>
                     <ul>{item.takeaways.map((x) => <li key={x}>{x}</li>)}</ul>
                   </details>
                 </article>
@@ -117,20 +185,51 @@ export default function Home() {
 
       <Section title="Research Outreach Toolkit">
         <div className="grid">
-          <article className="card"><h3>3-Part Email Structure</h3><ol><li>Why this professor or lab.</li><li>Why your background or curiosity connects.</li><li>The ask and your availability.</li></ol></article>
-          <article className="card"><h3>Interest Statement</h3><p>Name something specific, explain what caught your attention, and connect it to a class, project, skill, or question.</p></article>
-          <article className="card"><h3>Follow-Up Rule</h3><p>Send one short follow-up after about two weeks. If there is still no response, move on respectfully.</p></article>
-          <article className="card"><h3>Red Flags</h3><p>Generic tone, fake flattery, long emails, ignoring lab instructions, asking for too much too early, or sounding like a template.</p></article>
+          <article className="card">
+            <h3>3-Part Email Structure</h3>
+            <ol>
+              <li>Why this specific lab caught your attention.</li>
+              <li>What class, skill, project, or question connects you to that work.</li>
+              <li>Your ask: short meeting or interest in contributing as an undergraduate.</li>
+            </ol>
+          </article>
+          <article className="card">
+            <h3>Research-Interest Statement Structure</h3>
+            <p>Name one specific method, material, question, or paper and explain why it made you curious.</p>
+          </article>
+          <article className="card">
+            <h3>Timing + Follow-Up Rule</h3>
+            <p>Email in a normal weekday window, then send one short follow-up around two weeks later.</p>
+          </article>
+          <article className="card">
+            <h3>What PIs Value</h3>
+            <p>Curiosity, reliability, humility, consistency, clear communication, and willingness to learn.</p>
+          </article>
+          <article className="card">
+            <h3>Red-Flag Checklist</h3>
+            <ul>
+              <li>Generic copy-paste language.</li>
+              <li>Too long or overly formal message.</li>
+              <li>No specific connection to the lab.</li>
+              <li>Mass-email behavior.</li>
+            </ul>
+          </article>
         </div>
       </Section>
 
       <Section id="semiconductor" title="Semiconductor Guide Backbone">
         <p className="callout">
-          Semiconductors are one example pathway based on Maahir’s UCF experience. This section should help
-          students explore whether semiconductors interest them and how to break in through coursework, labs,
-          cleanroom exposure, conferences, networking, and personal experience.
+          Semiconductors are one example pathway based on Maahir&apos;s UCF experience, not the only definition of
+          success in Materials Science.
         </p>
-        <div className="grid">
+        <div className="grid topGap">
+          {semiconductorBackbone.map((track) => (
+            <article className="card" key={track}>
+              <h3>{track}</h3>
+            </article>
+          ))}
+        </div>
+        <div className="grid topGap">
           {ucfResources.map((resource) => (
             <article className="card" key={resource.name}>
               <span className="tag">{resource.category}</span>
@@ -143,20 +242,39 @@ export default function Home() {
       </Section>
 
       <Section title="What I Learned Entering Semiconductor-Related Research Through Thin Films and ALD">
-        <article className="card wide">
+        <article className="card wide editable">
           <p>
-            In Dr. Parag Banerjee’s lab, I was exposed to thin-film process science through atomic layer deposition,
-            in situ characterization, and the connection between materials processing and device-relevant behavior.
+            [Editable notes for Maahir] Freshman year I was interested in semiconductors, but I did not know where I
+            fit. Mentorship helped me turn broad interest into specific actions.
           </p>
           <p>
-            This helped me see that semiconductor work is not only about circuits. It also depends on surfaces,
-            interfaces, deposition, etching, metrology, process control, and data analysis.
+            In Dr. Parag Banerjee&apos;s lab, I learned how ALD, thin films, and in situ characterization connect to
+            process science and real process-engineering decisions.
           </p>
           <p>
-            The student takeaway is simple: start with one process, one material system, or one measurement method.
-            Over time, the pieces start to connect.
+            Research helped me connect coursework to semiconductor process engineering. If you are starting, pick one
+            process, one material system, or one measurement method and go deep enough to ask better questions.
           </p>
         </article>
+      </Section>
+
+      <Section id="faculty" title="UCF Faculty Starter Map">
+        <p className="callout">
+          This is a starter list, not a final or exhaustive list. Students should verify current faculty research pages
+          before outreach and should not mass-email professors.
+        </p>
+        <div className="grid">
+          {faculty.map((person) => (
+            <article className="card" key={person.name}>
+              <h3>{person.name}</h3>
+              <p className="dept">{person.department}</p>
+              <p>{person.area}</p>
+              <p>
+                <strong>Student angle:</strong> {person.studentAngle}
+              </p>
+            </article>
+          ))}
+        </div>
       </Section>
 
       <Section title="Other Materials Pathways">
@@ -171,28 +289,23 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section id="faculty" title="Starter UCF Faculty Map">
-        <p className="callout">
-          This is a starter list, not a final or exhaustive list. Students should verify current faculty research
-          pages before outreach and should not mass-email professors.
-        </p>
-        <div className="grid">
-          {faculty.map((person) => (
-            <article className="card" key={person.name}>
-              <h3>{person.name}</h3>
-              <p className="dept">{person.department}</p>
-              <p>{person.area}</p>
-              <p><strong>Student angle:</strong> {person.studentAngle}</p>
-            </article>
-          ))}
-        </div>
-      </Section>
-
       <Section title="Conferences and Networking">
         <div className="grid">
-          <article className="card"><h3>Before</h3><p>Prepare a short intro, research companies or labs, write questions, and update your resume or LinkedIn.</p></article>
-          <article className="card"><h3>During</h3><p>Talk to engineers, researchers, alumni, and company representatives. Ask what skills and roles actually matter.</p></article>
-          <article className="card"><h3>After</h3><p>Follow up, reflect on what sounded interesting, and turn the event into one concrete next step.</p></article>
+          <article className="card">
+            <h3>Why It Matters</h3>
+            <p>
+              Talks, conferences, career fairs, and company events help you meet hiring engineers, practice technical
+              conversations, and learn what teams actually need.
+            </p>
+          </article>
+          <article className="card">
+            <h3>How to Use Events Well</h3>
+            <p>Show up prepared, ask specific questions, take notes, and follow up while the conversation is still fresh.</p>
+          </article>
+          <article className="card">
+            <h3>Turn Contacts Into Opportunities</h3>
+            <p>Follow up with context, connect on LinkedIn, and turn one conversation into one concrete next step.</p>
+          </article>
         </div>
       </Section>
 
