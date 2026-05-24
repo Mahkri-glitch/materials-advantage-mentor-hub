@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Parag Banerjee",
+    "department": "Materials Science and Engineering",
+    "area": "ALD/ALE, thin films, atomic-scale surface/interface engineering, electronic/optical/energy device-relevant materials",
+    "studentAngle": "Strong fit for process science, deposition, etching, thin films, and semiconductor-adjacent materials processing."
+  },
+  {
+    "name": "Leland Nordin",
+    "department": "Materials Science and Engineering / CREOL",
+    "area": "Semiconductor materials and devices, growth, fabrication, characterization, optoelectronic/photonic devices",
+    "studentAngle": "Strong fit for semiconductor light sources, infrared/optoelectronic devices, photonics, and device fabrication."
+  },
+  {
+    "name": "Sidong Lei",
+    "department": "Materials Science and Engineering / NanoScience Technology Center",
+    "area": "Van der Waals semiconductors, 2D materials, surface/interface tailoring, flexible and layered devices",
+    "studentAngle": "Strong fit for 2D semiconductors, van der Waals integration, nanoscale devices, and materials-device interfaces."
+  },
+  {
+    "name": "Liping Yu",
+    "department": "Materials Science and Engineering",
+    "area": "Materials theory, modeling, informatics, electronic/energy materials, computational design of functional materials",
+    "studentAngle": "Strong fit for computational materials, materials informatics, semiconductor screening, and theory-driven materials design."
+  },
+  {
+    "name": "Viktoryia Shautsova",
+    "department": "Materials Science and Engineering",
+    "area": "2D materials, van der Waals heterostructure devices, photodetectors, laser patterning and phase transformation of 2D films",
+    "studentAngle": "Good fit for 2D devices, photodetectors, nanoscale optoelectronics, and advanced device materials."
+  },
+  {
+    "name": "Reza Abdolvand",
+    "department": "Electrical and Computer Engineering",
+    "area": "MEMS/NEMS, micro- and nano-systems, semiconductor workforce/cleanroom initiatives",
+    "studentAngle": "Good fit for MEMS, fabrication, cleanroom training, and UCF semiconductor workforce programs."
+  },
+  {
+    "name": "Jiann S. Yuan",
+    "department": "Electrical and Computer Engineering",
+    "area": "Semiconductor devices and ICs, GaN power devices, reliability analysis, analog/mixed-signal/RF circuits",
+    "studentAngle": "Strong fit for device engineering, power semiconductors, reliability, ICs, and electronics design."
+  },
+  {
+    "name": "Enxia Zhang",
+    "department": "Electrical and Computer Engineering",
+    "area": "Reliability and radiation response in advanced microelectronic devices and ICs based on silicon, compound semiconductors, 2D materials, photonic devices, RF devices, and MEMS/NEMS",
+    "studentAngle": "Strong fit for space electronics, radiation effects, device reliability, SiC/GaN/compound semiconductors, and defense/aerospace applications."
+  },
+  {
+    "name": "Wayesh Qarony",
+    "department": "Physics / ECE / CREOL",
+    "area": "Quantum materials and devices, integrated photonics, nano-optical devices, single-photon sources and detectors",
+    "studentAngle": "Good fit for quantum photonics, optoelectronics, integrated photonic devices, and quantum-device materials."
+  },
+  {
+    "name": "Saiful Khondaker",
+    "department": "Physics",
+    "area": "Nanoscale electrical/optical devices using low-dimensional nanostructures, nanotubes, graphene, organic electronics, photovoltaic devices",
+    "studentAngle": "Good fit for nanodevices, low-dimensional electronic transport, graphene/CNT devices, and organic electronics."
+  },
+  {
+    "name": "Sergey Stolbov",
+    "department": "Physics",
+    "area": "Computational quantum materials, defects in wide-bandgap semiconductors, spin qubits and single-photon emitters",
+    "studentAngle": "Good fit for theory/computation, wide-bandgap semiconductors, quantum defects, and quantum information materials."
+  },
+  {
+    "name": "Tom Hopper",
+    "department": "Chemistry",
+    "area": "Ultrafast photophysics in organic, hybrid, nanoscale materials and devices; emerging photovoltaics, optoelectronic and quantum technologies",
+    "studentAngle": "Good fit for chemistry/materials links to optoelectronics, perovskites, quantum dots, and ultrafast characterization."
+  }
+]

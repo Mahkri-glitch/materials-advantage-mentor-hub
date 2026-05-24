@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Companies and Schools in Semiconductors Spreadsheet",
+    "category": "Career Mapping",
+    "description": "Student-built spreadsheet to help mentees see the types of companies, schools, and pathways connected to semiconductor research and work.",
+    "url": "https://docs.google.com/spreadsheets/d/1ZB9N0lIwZ-YG1deAg9hm5mMhYTzGwoJjfCNNl3AP_nE/edit?usp=sharing"
+  },
+  {
+    "name": "UCF SEMI Undergraduate Certificate",
+    "category": "Coursework",
+    "description": "A formal way for students to connect coursework to semiconductor manufacturing, devices, and fabrication concepts.",
+    "url": "https://www.ucf.edu/degree/semiconductor-engineering-and-manufacturing-instruction-semi-undergraduate-certificate/"
+  },
+  {
+    "name": "UCF Research Cleanroom",
+    "category": "Facilities",
+    "description": "Cleanroom-related facilities and tool exposure that can help students understand fabrication, safety, contamination control, and process flow.",
+    "url": "https://cleanrooms.research.ucf.edu/"
+  },
+  {
+    "name": "SMART Workshop",
+    "category": "Hands-On Training",
+    "description": "A hands-on semiconductor manufacturing workshop pathway connected to cleanroom/process training.",
+    "url": "https://www.ece.ucf.edu/smart/"
+  },
+  {
+    "name": "ECE Scholarships",
+    "category": "Funding",
+    "description": "Scholarship and fellowship opportunities connected to ECE, semiconductor companies, and engineering student support.",
+    "url": "https://www.ece.ucf.edu/ece-scholarships/"
+  },
+  {
+    "name": "UCF Quantum Initiative",
+    "category": "Quantum / Research",
+    "description": "A research direction for students interested in quantum materials, devices, photonics, and interdisciplinary semiconductor-adjacent work.",
+    "url": "https://www.research.ucf.edu/quantum-initiative/"
+  },
+  {
+    "name": "UCF PREM / CQ-MIEE",
+    "category": "Materials Research / Mentoring",
+    "description": "A materials research and mentoring pathway connected to quantum materials innovation, workshops, conferences, and student development.",
+    "url": "https://prem2.cecs.ucf.edu/"
+  }
+]
