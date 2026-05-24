@@ -43,11 +43,10 @@ export default function Home() {
           <span className="badge">Materials Advantage @ UCF</span>
           <h1>Entering Research and Mentor Resources</h1>
           <p className="heroText">
-            A student-led hub for entering research, exploring technical fields, and building career direction.
+            A student-built hub for entering research, exploring technical fields, and building direction.
           </p>
           <p className="callout compactCallout">
-            You do not need to have everything figured out. Start with one lab, one professor, one paper, or one
-            question.
+            You do not need to have everything figured out. Start with one lab, one professor, one paper, or one question.
           </p>
         </div>
       </header>
@@ -55,12 +54,12 @@ export default function Home() {
       <section className="trackRow">
         <article className="trackCard">
           <h3>Materials Advantage Mentorship Documentation</h3>
-          <p>Meeting systems, mentor roles, office hours, and practical student support tools.</p>
+          <p>Mentor roles, meeting systems, office hours, and practical support tools.</p>
           <a href="/materials-advantage">Open mentorship docs →</a>
         </article>
         <article className="trackCard">
           <h3>Semiconductor Mentor Documentation and Resources</h3>
-          <p>One pathway example from UCF research experience, plus resource and faculty starting points.</p>
+          <p>A UCF-based pathway example with practical resources and faculty starting points.</p>
           <a href="/semiconductor">Open semiconductor docs →</a>
         </article>
       </section>
@@ -68,7 +67,7 @@ export default function Home() {
       <Section
         id="research"
         title="Why Research Matters for Any Career Path"
-        intro="Research is not only for grad school. It helps with internships, industry jobs, technical interviews, networking, confidence, and figuring out what you actually enjoy."
+        intro="Research is useful for internships, industry, grad school, technical interviews, and confidence. It also helps you figure out what you actually enjoy."
       >
         <ul className="simpleList">
           <li>Learn to solve unclear problems instead of only textbook problems.</li>
@@ -190,8 +189,7 @@ export default function Home() {
 
       <Section title="Conferences and Networking">
         <p>
-          Talks, conferences, career fairs, and industry visits help you practice technical conversations and meet hiring
-          engineers. Follow up quickly and turn each event into one next step.
+          Talks, conferences, career fairs, and industry visits help you practice technical conversations, meet hiring engineers, and turn each event into one next step.
         </p>
       </Section>
 
