@@ -1,78 +1,87 @@
+import AtomBackground from "../src/components/AtomBackground";
 import { faculty, featureRoadmap, meetingTypes, pathways, researchEntryModules, ucfResources } from "../src/data/siteContent";
 
-function Section({ id, title, children }: { id?: string; title: string; children: React.ReactNode }) {
+function Section({ id, title, intro, children }: { id?: string; title: string; intro?: string; children: React.ReactNode }) {
   return (
-    <section id={id} className="section">
-      <p className="eyebrow">Materials Advantage @ UCF</p>
+    <section id={id} className="section lightSection">
       <h2>{title}</h2>
+      {intro ? <p className="sectionIntro">{intro}</p> : null}
       {children}
     </section>
   );
 }
 
+const playbookPreviewTitles = new Set([
+  "Start From Zero",
+  "Finding Research Opportunities",
+  "Professor Email Builder",
+  "Timing and Follow-Up",
+  "What Professors and PIs Actually Value",
+  "Summer Research and REU Strategy",
+]);
+
 export default function Home() {
-  const grouped = researchEntryModules.reduce<Record<string, typeof researchEntryModules[number][]>>((acc, item) => {
+  const preview = researchEntryModules.filter((m) => playbookPreviewTitles.has(m.title));
+
+  const grouped = researchEntryModules.reduce<Record<string, (typeof researchEntryModules)[number][]>>((acc, item) => {
     acc[item.category] ??= [];
     acc[item.category].push(item);
     return acc;
   }, {});
 
+  const facultyByDepartment = faculty.reduce<Record<string, (typeof faculty)[number][]>>((acc, person) => {
+    acc[person.department] ??= [];
+    acc[person.department].push(person);
+    return acc;
+  }, {});
+
   return (
     <main>
-      <header className="hero">
-        <span className="badge">Mentorship + Research Entry Hub</span>
-        <h1>Entering Research and Mentor Resources</h1>
-        <p className="heroText">
-          A Materials Advantage @ UCF mentoring hub for students entering research,
-          exploring technical fields, and building career direction.
-        </p>
-        <p className="callout">
-          You do not need to have your whole career figured out. Bring your questions,
-          interests, and uncertainty. This program helps you find a starting point.
-        </p>
-        <nav>
-          <a href="#research">Why Research</a>
-          <a href="#meetings">Three Meetings</a>
-          <a href="#playbook">Research Playbook</a>
-          <a href="#semiconductor">Semiconductor Guide</a>
-          <a href="#faculty">Faculty Map</a>
-        </nav>
+      <header className="hero cleanHero">
+        <AtomBackground />
+        <div className="heroContent">
+          <span className="badge">Materials Advantage @ UCF</span>
+          <h1>Entering Research and Mentor Resources</h1>
+          <p className="heroText">
+            A student-built hub for entering research, exploring technical fields, and building direction.
+          </p>
+          <p className="callout compactCallout">
+            You do not need to have everything figured out. Start with one lab, one professor, one paper, or one question.
+          </p>
+        </div>
       </header>
 
-      <Section id="research" title="Why Research Matters for Any Career Path">
-        <div className="twoCol">
-          <p>
-            Research is not only for students who already know they want graduate school. It helps
-            students learn how to work through unclear problems, explain technical ideas, build useful
-            stories for interviews, and figure out what kind of work they actually like.
-          </p>
-          <p>
-            For industry, research can show initiative and technical depth. For academia, it shows that
-            students understand what research feels like. For any pathway, it builds confidence,
-            communication, problem-solving, and relationships with mentors.
-          </p>
-        </div>
+      <section className="trackRow">
+        <article className="trackCard">
+          <h3>Materials Advantage Mentorship Documentation</h3>
+          <p>Mentor roles, meeting systems, office hours, and practical support tools.</p>
+          <a href="/materials-advantage">Open mentorship docs →</a>
+        </article>
+        <article className="trackCard">
+          <h3>Semiconductor Mentor Documentation and Resources</h3>
+          <p>A UCF-based pathway example with practical resources and faculty starting points.</p>
+          <a href="/semiconductor">Open semiconductor docs →</a>
+        </article>
+      </section>
+
+      <Section
+        id="research"
+        title="Why Research Matters for Any Career Path"
+        intro="Research is useful for internships, industry, grad school, technical interviews, and confidence. It also helps you figure out what you actually enjoy."
+      >
+        <ul className="simpleList">
+          <li>Learn to solve unclear problems instead of only textbook problems.</li>
+          <li>Build real project stories for recruiters, labs, and scholarship reviewers.</li>
+          <li>Meet mentors and faculty who can guide your next move.</li>
+        </ul>
       </Section>
 
-      <Section title="Why Mentoring Matters">
-        <div className="twoCol">
-          <p>
-            Mentoring is more than advising. Advising gives information. Mentoring helps students grow
-            through trust, honest feedback, listening, and repeated conversations.
-          </p>
-          <p>
-            A good mentor does not need to have every answer. A good mentor helps the student ask better
-            questions, find the right people, and take the next step.
-          </p>
-        </div>
-      </Section>
-
-      <Section id="meetings" title="Three Meeting System">
-        <div className="grid">
+      <Section title="Three Meeting System" intro="Short, repeatable meetings keep mentoring practical and consistent.">
+        <div className="stackedCards">
           {meetingTypes.map((meeting) => (
-            <article className="card" key={meeting.title}>
-              <span className="tag">{meeting.length}</span>
+            <article className="card cleanCard" key={meeting.title}>
               <h3>{meeting.title}</h3>
+              <p className="mutedLine">Suggested length: {meeting.length}</p>
               <p>{meeting.purpose}</p>
               <details>
                 <summary>Sample questions</summary>
@@ -83,121 +92,109 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section title="Mentor Office Hours">
-        <div className="grid">
-          <article className="card"><h3>General Office Hours</h3><p>For research, classes, resumes, professor emails, and general career direction.</p></article>
-          <article className="card"><h3>Field-Specific Office Hours</h3><p>For semiconductors, biomaterials, polymers, metals, ceramics, computational materials, or data skills.</p></article>
-          <article className="card"><h3>Appointment-Based Help</h3><p>For professor email review, research group selection, REU/internship planning, or more personal questions.</p></article>
+      <Section
+        id="playbook"
+        title="Research Entry Playbook"
+        intro="The goal is not to sound impressive. The goal is to show real curiosity and take the next step."
+      >
+        <div className="previewGrid">
+          {preview.map((item) => (
+            <article className="card cleanCard" key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.humanCopy}</p>
+            </article>
+          ))}
         </div>
-      </Section>
 
-      <Section id="playbook" title="Research Entry Playbook">
-        <p className="callout">
-          This playbook turns the hidden process of entering research into steps: find labs, read enough
-          to ask better questions, reach out like a real person, follow up once, and build trust over time.
-        </p>
-        {Object.entries(grouped).map(([category, items]) => (
-          <div className="moduleGroup" key={category}>
-            <h3>{category}</h3>
-            <div className="grid">
+        <details className="fullPlaybook">
+          <summary>View full playbook by category</summary>
+          {Object.entries(grouped).map(([category, items]) => (
+            <div className="playbookGroup" key={category}>
+              <h4>{category}</h4>
               {items.map((item) => (
-                <article className="card" key={item.title}>
-                  <h4>{item.title}</h4>
+                <details key={item.title} className="playbookItem">
+                  <summary>{item.title}</summary>
                   <p>{item.humanCopy}</p>
-                  <details>
-                    <summary>Key points</summary>
-                    <ul>{item.takeaways.map((x) => <li key={x}>{x}</li>)}</ul>
-                  </details>
-                </article>
+                  <ul>{item.takeaways.map((t) => <li key={t}>{t}</li>)}</ul>
+                </details>
               ))}
             </div>
-          </div>
-        ))}
+          ))}
+        </details>
       </Section>
 
       <Section title="Research Outreach Toolkit">
-        <div className="grid">
-          <article className="card"><h3>3-Part Email Structure</h3><ol><li>Why this professor or lab.</li><li>Why your background or curiosity connects.</li><li>The ask and your availability.</li></ol></article>
-          <article className="card"><h3>Interest Statement</h3><p>Name something specific, explain what caught your attention, and connect it to a class, project, skill, or question.</p></article>
-          <article className="card"><h3>Follow-Up Rule</h3><p>Send one short follow-up after about two weeks. If there is still no response, move on respectfully.</p></article>
-          <article className="card"><h3>Red Flags</h3><p>Generic tone, fake flattery, long emails, ignoring lab instructions, asking for too much too early, or sounding like a template.</p></article>
+        <div className="toolkitCols">
+          <article>
+            <h3>3-part email structure</h3>
+            <ol>
+              <li>Why this lab specifically.</li>
+              <li>What connects your interests or coursework.</li>
+              <li>A clear ask for next step.</li>
+            </ol>
+          </article>
+          <article>
+            <h3>Follow-up rule</h3>
+            <p>Send one short follow-up after about two weeks. Then move on respectfully.</p>
+            <h3>What PIs value</h3>
+            <p>Reliability, curiosity, honesty, and consistent effort.</p>
+          </article>
         </div>
       </Section>
 
-      <Section id="semiconductor" title="Semiconductor Guide Backbone">
-        <p className="callout">
-          Semiconductors are one example pathway based on Maahir’s UCF experience. This section should help
-          students explore whether semiconductors interest them and how to break in through coursework, labs,
-          cleanroom exposure, conferences, networking, and personal experience.
-        </p>
-        <div className="grid">
+      <Section
+        id="semiconductor"
+        title="Semiconductor Guide Backbone"
+        intro="Semiconductors are one example pathway, not the only Materials Science path."
+      >
+        <div className="resourceList">
           {ucfResources.map((resource) => (
-            <article className="card" key={resource.name}>
-              <span className="tag">{resource.category}</span>
-              <h3>{resource.name}</h3>
-              <p>{resource.description}</p>
-              <a href={resource.url}>Open resource</a>
+            <article className="resourceRow" key={resource.name}>
+              <div>
+                <p className="miniTag">{resource.category}</p>
+                <h3>{resource.name}</h3>
+                <p>{resource.description}</p>
+              </div>
+              <a href={resource.url}>Open</a>
             </article>
           ))}
         </div>
       </Section>
 
-      <Section title="What I Learned Entering Semiconductor-Related Research Through Thin Films and ALD">
-        <article className="card wide">
-          <p>
-            In Dr. Parag Banerjee’s lab, I was exposed to thin-film process science through atomic layer deposition,
-            in situ characterization, and the connection between materials processing and device-relevant behavior.
-          </p>
-          <p>
-            This helped me see that semiconductor work is not only about circuits. It also depends on surfaces,
-            interfaces, deposition, etching, metrology, process control, and data analysis.
-          </p>
-          <p>
-            The student takeaway is simple: start with one process, one material system, or one measurement method.
-            Over time, the pieces start to connect.
-          </p>
-        </article>
-      </Section>
-
-      <Section title="Other Materials Pathways">
-        <div className="grid">
+      <Section title="Other Materials Pathways" intro="Keep multiple paths visible while you explore what fits.">
+        <div className="pathwayRow">
           {pathways.map((pathway) => (
-            <article className="card" key={pathway.title}>
+            <article className="card cleanCard" key={pathway.title}>
               <h3>{pathway.title}</h3>
               <p>{pathway.description}</p>
-              <div>{pathway.skills.map((skill) => <span className="tag" key={skill}>{skill}</span>)}</div>
             </article>
           ))}
         </div>
       </Section>
 
-      <Section id="faculty" title="Starter UCF Faculty Map">
-        <p className="callout">
-          This is a starter list, not a final or exhaustive list. Students should verify current faculty research
-          pages before outreach and should not mass-email professors.
-        </p>
-        <div className="grid">
-          {faculty.map((person) => (
-            <article className="card" key={person.name}>
-              <h3>{person.name}</h3>
-              <p className="dept">{person.department}</p>
-              <p>{person.area}</p>
-              <p><strong>Student angle:</strong> {person.studentAngle}</p>
-            </article>
-          ))}
-        </div>
+      <Section title="Compact UCF Faculty Starter Map" intro="Starter list only—verify current pages and do not mass-email professors.">
+        {Object.entries(facultyByDepartment).map(([dept, people]) => (
+          <details className="facultyGroup" key={dept}>
+            <summary>{dept} ({people.length})</summary>
+            <ul>
+              {people.map((person) => (
+                <li key={person.name}>
+                  <strong>{person.name}:</strong> {person.area}
+                </li>
+              ))}
+            </ul>
+          </details>
+        ))}
       </Section>
 
       <Section title="Conferences and Networking">
-        <div className="grid">
-          <article className="card"><h3>Before</h3><p>Prepare a short intro, research companies or labs, write questions, and update your resume or LinkedIn.</p></article>
-          <article className="card"><h3>During</h3><p>Talk to engineers, researchers, alumni, and company representatives. Ask what skills and roles actually matter.</p></article>
-          <article className="card"><h3>After</h3><p>Follow up, reflect on what sounded interesting, and turn the event into one concrete next step.</p></article>
-        </div>
+        <p>
+          Talks, conferences, career fairs, and industry visits help you practice technical conversations, meet hiring engineers, and turn each event into one next step.
+        </p>
       </Section>
 
       <Section title="Feature Roadmap">
-        <ul className="roadmap">{featureRoadmap.map((feature) => <li key={feature}>{feature}</li>)}</ul>
+        <ul className="roadmap compactRoadmap">{featureRoadmap.map((feature) => <li key={feature}>{feature}</li>)}</ul>
       </Section>
     </main>
   );
