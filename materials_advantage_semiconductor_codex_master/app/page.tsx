@@ -1,6 +1,15 @@
 import AtomBackground from "../src/components/AtomBackground";
 import { DecisionCard } from "../src/components/ui";
 
+const playbookPreviewTitles = new Set([
+  "Start From Zero",
+  "Finding Research Opportunities",
+  "Professor Email Builder",
+  "Timing and Follow-Up",
+  "What Professors and PIs Actually Value",
+  "Summer Research and REU Strategy",
+]);
+
 export default function Home() {
   return (
     <main>
