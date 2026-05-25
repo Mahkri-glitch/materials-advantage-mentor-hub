@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { researchEntryModules } from "../../src/data/siteContent";
 import { StepCard } from "../../src/components/ui";
 
@@ -16,6 +17,7 @@ export default function ResearchPage() {
   return (
     <main>
       <section className="section"><h1>Research</h1><p>Start here if you feel lost. You do not need to know everything before reaching out.</p></section>
+      <section className="section sectionTight"><Link className="btn" href="/">← Back to Home</Link></section>
       <section className="startBox"><strong>Start here:</strong> Choose one step below and complete it today.</section>
       <section className="listCol">
         {steps.map((s, i) => {
@@ -23,7 +25,7 @@ export default function ResearchPage() {
           return <StepCard key={s.t} step={i + 1} title={m.title} summary={m.humanCopy} nextAction={s.next} details={<ul>{m.takeaways.map((t) => <li key={t}>{t}</li>)}</ul>} />;
         })}
       </section>
-      <section className="section"><a className="btn" href="/templates">Next action: open templates/tools</a></section>
+      <section className="section"><Link className="btn" href="/templates">Next action: open templates/tools</Link></section>
     </main>
   );
 }

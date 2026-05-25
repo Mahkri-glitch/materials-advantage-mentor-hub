@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { meetingTypes } from "../../src/data/siteContent";
 import { Accordion } from "../../src/components/ui";
 
@@ -11,6 +12,7 @@ export default function MentorshipPage() {
   return (
     <main>
       <section className="section"><h1>Mentorship</h1><p>Mentoring is more than advising. It helps students grow through trust, clear expectations, feedback, and independence.</p></section>
+      <section className="section sectionTight"><Link className="btn" href="/">← Back to Home</Link></section>
       <section className="startBox"><strong>Start here:</strong> Run the Initial Mentor-Mentee Meeting first.</section>
       <section className="listCol">
         {meetingTypes.map((m) => (
@@ -25,7 +27,7 @@ export default function MentorshipPage() {
           </article>
         ))}
       </section>
-      <section className="section"><a className="btn" href="/templates">Next action: open mentor templates</a></section>
+      <section className="section"><Link className="btn" href="/templates">Next action: open mentor templates</Link></section>
     </main>
   );
 }

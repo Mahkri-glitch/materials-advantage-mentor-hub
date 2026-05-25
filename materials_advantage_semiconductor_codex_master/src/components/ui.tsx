@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import { faculty } from "../data/siteContent";
 
 export function DecisionCard({ title, description, href }: { title: string; description: string; href: string }) {
@@ -8,7 +9,7 @@ export function DecisionCard({ title, description, href }: { title: string; desc
     <article className="decisionCard">
       <h3>{title}</h3>
       <p>{description}</p>
-      <a className="btn" href={href}>Open</a>
+      <Link className="btn" href={href}>Open</Link>
     </article>
   );
 }

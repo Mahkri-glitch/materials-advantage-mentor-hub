@@ -21,3 +21,12 @@ a{color:var(--cyan);text-decoration:none}
 input,select{background:#0f1924;border:1px solid var(--line);color:var(--text);border-radius:.45rem;padding:.5rem}
 .atomCanvas{position:absolute;inset:0;opacity:.35;z-index:1}
 @media(max-width:800px){.decisionGrid,.filterRow{grid-template-columns:1fr}.hero{padding:2rem .9rem}}
+
+.siteHeader{position:sticky;top:0;z-index:20;background:rgba(10,15,21,.92);backdrop-filter:blur(6px);border-bottom:1px solid rgba(69,207,255,.14)}
+.siteHeaderInner{width:min(980px,calc(100% - 1.2rem));margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:.8rem;padding:.55rem 0}
+.brand{font-weight:700;color:#ffe8a6}
+.topNav{display:flex;gap:.4rem;flex-wrap:wrap}
+.navLink{padding:.28rem .55rem;border-radius:.45rem;color:var(--muted)}
+.activeNav{color:var(--text);background:rgba(69,207,255,.16);border:1px solid rgba(69,207,255,.38)}
+.sectionTight{padding:.55rem .95rem}
+@media(max-width:800px){.siteHeaderInner{align-items:flex-start;flex-direction:column}.topNav{width:100%}}

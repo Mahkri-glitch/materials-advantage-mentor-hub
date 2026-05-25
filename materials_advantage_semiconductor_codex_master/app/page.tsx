@@ -1,14 +1,6 @@
+import Link from "next/link";
 import AtomBackground from "../src/components/AtomBackground";
 import { DecisionCard } from "../src/components/ui";
-
-const playbookPreviewTitles = new Set([
-  "Start From Zero",
-  "Finding Research Opportunities",
-  "Professor Email Builder",
-  "Timing and Follow-Up",
-  "What Professors and PIs Actually Value",
-  "Summer Research and REU Strategy",
-]);
 
 export default function Home() {
   return (
@@ -40,14 +32,14 @@ export default function Home() {
       <section className="section">
         <h2>Quick start</h2>
         <div className="quickBtns">
-          <a className="btn" href="/research">Start research flow</a>
-          <a className="btn" href="/templates">Open email templates</a>
-          <a className="btn" href="/faculty">Browse faculty map</a>
+          <Link className="btn" href="/research">Start research flow</Link>
+          <Link className="btn" href="/templates">Open email templates</Link>
+          <Link className="btn" href="/faculty">Browse faculty map</Link>
         </div>
       </section>
 
       <footer className="miniFooter">
-        <a href="/research">Research</a><a href="/mentorship">Mentorship</a><a href="/semiconductors">Semiconductors</a><a href="/templates">Templates</a><a href="/faculty">Faculty</a>
+        <Link href="/research">Research</Link><Link href="/mentorship">Mentorship</Link><Link href="/semiconductors">Semiconductors</Link><Link href="/templates">Templates</Link><Link href="/faculty">Faculty</Link>
       </footer>
     </main>
   );

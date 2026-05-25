@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { TemplateBox } from "../../src/components/ui";
 
 const templates = [
@@ -14,9 +15,10 @@ export default function TemplatesPage() {
   return (
     <main>
       <section className="section"><h1>Templates and Tools</h1><p>Use these as structures, not scripts. The goal is not to sound impressive. The goal is to show real curiosity.</p></section>
+      <section className="section sectionTight"><Link className="btn" href="/">← Back to Home</Link></section>
       <section className="startBox"><strong>Start here:</strong> Copy one template and personalize it today.</section>
       <section className="listCol">{templates.map(([title, content]) => <TemplateBox key={title} title={title} content={content} />)}</section>
-      <section className="section"><a className="btn" href="/research">Next action: return to research flow</a></section>
+      <section className="section"><Link className="btn" href="/research">Next action: return to research flow</Link></section>
     </main>
   );
 }
