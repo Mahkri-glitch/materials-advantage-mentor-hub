@@ -19,7 +19,6 @@ a{color:var(--cyan);text-decoration:none}
 .templateBox pre{white-space:pre-wrap;background:rgba(0,0,0,.25);padding:.6rem;border-radius:.5rem;color:#d7e7f7}
 .filterRow{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.5rem;margin-bottom:.7rem}
 input,select{background:#0f1924;border:1px solid var(--line);color:var(--text);border-radius:.45rem;padding:.5rem}
-.atomCanvas{position:absolute;inset:0;opacity:.58;z-index:1}
 @media(max-width:800px){.decisionGrid,.filterRow{grid-template-columns:1fr}.hero{padding:2rem .9rem}}
 
 .siteHeader{position:sticky;top:0;z-index:20;background:rgba(10,15,21,.92);backdrop-filter:blur(6px);border-bottom:1px solid rgba(69,207,255,.14)}
@@ -37,3 +36,7 @@ input,select{background:#0f1924;border:1px solid var(--line);color:var(--text);b
 .btn{transition:transform .16s ease, background .16s ease}
 .btn:hover{transform:translateY(-1px);background:rgba(69,207,255,.22)}
 .hero h1{letter-spacing:-.04em}
+
+.crystalCanvas{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.85}
+.contentLayer{position:relative;z-index:2}
+.section,.startBox,.templateBox,.resourceCard,.stepCard,.facultyCard,.decisionCard{backdrop-filter:blur(2px)}

@@ -1,13 +1,11 @@
 import Link from "next/link";
-import AtomBackground from "../src/components/AtomBackground";
 import { DecisionCard } from "../src/components/ui";
 
 export default function Home() {
   return (
     <main>
       <header className="hero cleanHero">
-        <AtomBackground />
-        <div className="heroContent">
+                <div className="heroContent">
           <span className="badge">Materials Advantage @ UCF</span>
           <h1>Entering Research and Mentor Resources</h1>
           <p className="heroText">A modern student hub for research entry, mentoring, and career direction in Materials Science.</p>
