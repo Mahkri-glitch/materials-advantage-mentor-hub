@@ -7,7 +7,7 @@ export default function MentorshipPage() {
     <main>
       <section className="section"><h1>Mentorship Playbook</h1><p>Entering Mentoring inspired tools, adapted for Materials Advantage mentors and mentees.</p></section>
       <section className="section sectionTight"><Link className="btn" href="/">← Back to Home</Link></section>
-      <section className="startBox"><strong>Start here:</strong> Use the first-meeting checklist, then run meeting 1 this week.</section>
+      <section className="startBox"><strong>First move:</strong> Use the first-meeting checklist, then run meeting 1 this week.</section>
 
       <section className="section"><h2>First Meeting Relationship Checklist</h2><ChecklistAccordion title="Open checklist" items={firstMeetingChecklist} label="First meeting tools" /></section>
 
@@ -27,7 +27,7 @@ export default function MentorshipPage() {
 
       <section className="section"><h2>Materials Science Research Readiness Checklist</h2><ReadinessChecklist title="Open materials readiness checklist" items={materialsReadiness} /></section>
 
-      <section className="section"><h2>Reference Images / Source Notes</h2><p>Optional placeholders for future uploads:</p><ul><li>/reference-images/mentoring</li><li>/reference-images/semiconductors</li></ul></section>
+      
 
       <section className="section"><Link className="btn" href="/templates">What to do next: open mentor templates</Link></section>
     </main>

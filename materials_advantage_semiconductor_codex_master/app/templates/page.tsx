@@ -16,7 +16,7 @@ export default function TemplatesPage() {
     <main>
       <section className="section"><h1>Templates and Tools</h1><p>Use these as structures, not scripts. The goal is not to sound impressive. The goal is to show real curiosity.</p></section>
       <section className="section sectionTight"><Link className="btn" href="/">← Back to Home</Link></section>
-      <section className="startBox"><strong>Start here:</strong> Copy one template and personalize it today.</section>
+      <section className="startBox"><strong>First move:</strong> Copy one template and personalize it today.</section>
       <section className="listCol">{templates.map(([title, content]) => <TemplateBox key={title} title={title} content={content} />)}</section>
       <section className="section"><Link className="btn" href="/research">Next action: return to research flow</Link></section>
     </main>

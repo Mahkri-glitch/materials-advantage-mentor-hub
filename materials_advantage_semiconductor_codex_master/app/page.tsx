@@ -10,37 +10,30 @@ export default function Home() {
         <div className="heroContent">
           <span className="badge">Materials Advantage @ UCF</span>
           <h1>Entering Research and Mentor Resources</h1>
-          <p className="heroText">You do not need to have your whole career figured out. This hub helps you pick one useful next step.</p>
+          <p className="heroText">A modern student hub for research entry, mentoring, and career direction in Materials Science.</p>
         </div>
       </header>
 
-      <section className="section">
-        <h2>What do you need help with?</h2>
+      <section className="section sectionFlat">
+        <h2>Choose your path</h2>
         <div className="decisionGrid">
-          <DecisionCard title="I want to get into research" description="Start here if you feel lost and want a clear first move." href="/research" />
-          <DecisionCard title="I want to understand mentoring" description="Use this if you are mentoring or being mentored this semester." href="/mentorship" />
-          <DecisionCard title="I want to explore semiconductors" description="See one pathway example without treating it as the only path." href="/semiconductors" />
-          <DecisionCard title="I need templates/tools" description="Open practical structures for emails, meetings, and follow-ups." href="/templates" />
+          <DecisionCard title="🔬 Research" description="Build a clear step-by-step path from curiosity to lab outreach." href="/research" />
+          <DecisionCard title="🤝 Mentorship" description="Use practical mentor tools, meetings, and reflection checklists." href="/mentorship" />
+          <DecisionCard title="⚛️ Semiconductors" description="Explore one pathway example with UCF resources and readiness tools." href="/semiconductors" />
+          <DecisionCard title="🧰 Templates" description="Copy usable structures for emails, check-ins, and meeting notes." href="/templates" />
+          <DecisionCard title="🧑‍🏫 Faculty" description="Search a compact faculty starter map and find one outreach target." href="/faculty" />
         </div>
       </section>
 
-      <section className="section">
-        <h2>Program in one minute</h2>
-        <p>Research helps with internships, industry, graduate school, networking, confidence, and technical communication. Mentoring helps you turn curiosity into direction.</p>
-      </section>
-
-      <section className="section">
-        <h2>Quick start</h2>
+      <section className="section sectionFlat">
+        <h2>Quick overview</h2>
+        <p>Research helps with internships, industry, graduate school, confidence, networking, and communication. Mentoring helps you turn uncertainty into action.</p>
         <div className="quickBtns">
-          <Link className="btn" href="/research">Start research flow</Link>
-          <Link className="btn" href="/templates">Open email templates</Link>
-          <Link className="btn" href="/faculty">Browse faculty map</Link>
+          <Link className="btn" href="/research">Research flow</Link>
+          <Link className="btn" href="/mentorship">Mentor playbook</Link>
+          <Link className="btn" href="/templates">Open tools</Link>
         </div>
       </section>
-
-      <footer className="miniFooter">
-        <Link href="/research">Research</Link><Link href="/mentorship">Mentorship</Link><Link href="/semiconductors">Semiconductors</Link><Link href="/templates">Templates</Link><Link href="/faculty">Faculty</Link>
-      </footer>
     </main>
   );
 }

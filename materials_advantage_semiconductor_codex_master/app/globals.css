@@ -1,10 +1,10 @@
 *{box-sizing:border-box} :root{--bg:#0a0f15;--panel:#111a24;--text:#f4f8fc;--muted:#b9c5d4;--gold:#ffc904;--cyan:#45cfff;--line:#243445}
-body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+body{margin:0;font-family:Inter,system-ui,sans-serif;background:radial-gradient(circle at 15% -10%, rgba(69,207,255,.12), transparent 32%), radial-gradient(circle at 85% -10%, rgba(255,201,4,.10), transparent 28%), var(--bg);color:var(--text);line-height:1.6}
 main{width:min(920px,calc(100% - 1.2rem));margin:0 auto;padding-bottom:2.5rem}
 h1{font-size:clamp(2rem,6vw,3.4rem);margin:.5rem 0 1rem} h2{font-size:clamp(1.35rem,3vw,1.8rem);margin:0 0 .6rem} h3{margin:.15rem 0 .35rem}
 p,li{color:var(--muted)}
 a{color:var(--cyan);text-decoration:none}
-.hero{position:relative;overflow:hidden;border-radius:1rem;background:linear-gradient(165deg,#0f1823,#0c141d);padding:2.5rem 1rem;margin:1rem 0}
+.hero{position:relative;overflow:hidden;border-radius:1rem;background:linear-gradient(160deg,#111c29,#0a121c 60%,#132131);padding:3rem 1.2rem;margin:1rem 0 1.4rem;border:1px solid rgba(69,207,255,.18);box-shadow:0 18px 50px rgba(0,0,0,.35)}
 .cleanHero{min-height:42vh;display:flex;align-items:center}.heroContent{position:relative;z-index:2;max-width:680px}
 .badge{display:inline-block;border:1px solid rgba(255,201,4,.4);padding:.2rem .6rem;border-radius:999px;color:#ffe8a6;font-size:.78rem}
 .heroText{max-width:58ch}
@@ -30,3 +30,10 @@ input,select{background:#0f1924;border:1px solid var(--line);color:var(--text);b
 .activeNav{color:var(--text);background:rgba(69,207,255,.16);border:1px solid rgba(69,207,255,.38)}
 .sectionTight{padding:.55rem .95rem}
 @media(max-width:800px){.siteHeaderInner{align-items:flex-start;flex-direction:column}.topNav{width:100%}}
+
+.sectionFlat{background:transparent;border:1px solid rgba(69,207,255,.12)}
+.decisionCard,.stepCard,.resourceCard,.templateBox,.facultyCard{background:linear-gradient(170deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.09)}
+.decisionCard h3{display:flex;align-items:center;gap:.4rem}
+.btn{transition:transform .16s ease, background .16s ease}
+.btn:hover{transform:translateY(-1px);background:rgba(69,207,255,.22)}
+.hero h1{letter-spacing:-.04em}
