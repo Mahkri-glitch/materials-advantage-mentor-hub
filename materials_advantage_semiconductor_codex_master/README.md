@@ -1,27 +1,32 @@
-# Entering Research and Mentor Resources
+# Reference Images Package for Codex
 
-Codex-ready package for building both:
+This folder is meant to be dropped directly into your Next.js / Vercel project.
 
-1. Materials Advantage Mentorship Documentation
-2. Semiconductor Mentor Documentation and Resources
+## What is inside
 
-## How to use with Codex
-
-1. Upload this folder to a GitHub repo.
-2. Open the repo in Codex.
-3. Paste `MASTER_CODEX_PROMPT.md`.
-4. Ask Codex to refine the site and documentation.
-5. Run:
-
-```bash
-npm install
-npm run build
+```text
+public/
+  reference-images/
+    mentoring/
+    semiconductors/
+docs/
+  REFERENCE_IMAGE_INDEX.md
+  CODEX_PROMPT_USE_REFERENCE_IMAGES.md
 ```
 
-## Important rules
+## How to use
 
-- No medical school-specific content.
-- No high-school-student-specific content.
-- No source labels inside the research playbook.
-- Semiconductors are one example/backbone pathway, not the only pathway.
-- Keep the tone human and student-facing.
+1. Unzip this package.
+2. Drag the `public/` folder into your project root.
+3. If GitHub asks whether to merge folders, choose merge/replace as needed.
+4. Drag the `docs/` folder into your project root too if you want the Codex prompt and image index.
+5. Commit and push to GitHub.
+6. In Codex, paste the prompt from:
+
+```text
+docs/CODEX_PROMPT_USE_REFERENCE_IMAGES.md
+```
+
+## Important
+
+The website should not show every screenshot by default. Use these files as reference/source images and keep them hidden in a collapsed “Reference Images / Source Notes” section.
