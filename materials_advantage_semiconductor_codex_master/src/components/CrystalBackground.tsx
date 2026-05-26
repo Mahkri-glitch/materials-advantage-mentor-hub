@@ -32,7 +32,7 @@ export default function CrystalBackground() {
             x: xi * spacing + ((xi * 13 + yi * 7 + zi * 3) % 5 - 2) * jitter,
             y: yi * spacing + ((xi * 5 + yi * 11 + zi * 2) % 5 - 2) * jitter,
             z: zi * spacing + ((xi * 17 + yi * 19 + zi * 23) % 5 - 2) * jitter,
-            r: 1.25,
+            r: 1.65,
             gold: (xi * 31 + yi * 17 + zi * 13) % 29 === 0,
           });
         }
@@ -64,7 +64,7 @@ export default function CrystalBackground() {
         const perspective = camZ / (camZ + pz + 2200);
         const sx = w * 0.5 + (n.x + driftX) * perspective;
         const sy = h * 0.5 + (n.y + driftY) * perspective;
-        const radius = n.r * perspective * 2.2;
+        const radius = n.r * perspective * 2.65;
 
         if (sx < -30 || sx > w + 30 || sy < -30 || sy > h + 30) continue;
 

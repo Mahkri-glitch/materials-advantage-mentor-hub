@@ -9,7 +9,6 @@ export default function SemiconductorsPage() {
     <main>
       <section className="section"><h1>Semiconductors Pathway Guide</h1><p>Semiconductors are one example pathway, not the only Materials Science path.</p></section>
       <section className="section sectionTight"><Link className="btn" href="/">← Back to Home</Link></section>
-      <section className="startBox"><strong>First move:</strong> Pick one category, one UCF resource, and one next action.</section>
 
       <section className="section"><h2>What semiconductor work includes</h2><div className="decisionGrid">{categories.map((c)=><article className="decisionCard" key={c}><h3>{c}</h3></article>)}</div></section>
       <section className="section"><h2>How UCF connects to this pathway</h2><div className="listCol">{ucfResources.map((r)=><ResourceCard key={r.name} title={r.name} category={r.category} description={r.description} href={r.url} />)}</div></section>

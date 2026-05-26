@@ -18,7 +18,6 @@ export default function ResearchPage() {
     <main>
       <section className="section"><h1>Research</h1><p>If you feel lost, this gives you a practical sequence. You do not need to know everything before reaching out.</p></section>
       <section className="section sectionTight"><Link className="btn" href="/">← Back to Home</Link></section>
-      <section className="startBox"><strong>First move:</strong> Choose one step below and complete it today.</section>
       <section className="listCol">
         {steps.map((s, i) => {
           const m = pick(s.t);
