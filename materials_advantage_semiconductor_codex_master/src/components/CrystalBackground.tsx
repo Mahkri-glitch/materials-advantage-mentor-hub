@@ -16,20 +16,23 @@ export default function CrystalBackground() {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const mobile = window.matchMedia("(max-width: 800px)").matches;
 
-    const layers = mobile ? 4 : 6;
-    const spread = mobile ? 4 : 5;
-    const nodes: Node[] = [];
+    const grid = mobile ? 7 : 10;
+    const layers = mobile ? 8 : 12;
+    const spacingX = mobile ? 80 : 96;
+    const spacingY = mobile ? 64 : 78;
+    const spacingZ = mobile ? 120 : 146;
 
+    const nodes: Node[] = [];
     for (let z = -layers; z <= layers; z += 1) {
-      for (let x = -spread; x <= spread; x += 1) {
-        for (let y = -spread; y <= spread; y += 2) {
+      for (let x = -grid; x <= grid; x += 1) {
+        for (let y = -grid; y <= grid; y += 1) {
           if ((x + y + z) % 2 !== 0) continue;
           nodes.push({
-            x: x * 42 + (Math.random() - 0.5) * 8,
-            y: y * 36 + (Math.random() - 0.5) * 8,
-            z: z * 58 + (Math.random() - 0.5) * 10,
-            r: 1.6 + Math.random() * 2.4,
-            gold: Math.random() < 0.08,
+            x: x * spacingX + (Math.random() - 0.5) * 20,
+            y: y * spacingY + (Math.random() - 0.5) * 20,
+            z: z * spacingZ + (Math.random() - 0.5) * 24,
+            r: 1.1 + Math.random() * 2.1,
+            gold: Math.random() < 0.07,
           });
         }
       }
@@ -42,8 +45,6 @@ export default function CrystalBackground() {
       const dpr = window.devicePixelRatio || 1;
       canvas.width = window.innerWidth * dpr;
       canvas.height = window.innerHeight * dpr;
-      canvas.style.width = `${window.innerWidth}px`;
-      canvas.style.height = `${window.innerHeight}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
 
@@ -52,26 +53,23 @@ export default function CrystalBackground() {
       const h = window.innerHeight;
       ctx.clearRect(0, 0, w, h);
 
-      const driftX = reduced ? 0 : Math.sin(t * 0.0002) * 18;
-      const driftY = reduced ? 0 : Math.cos(t * 0.00017) * 14;
-      const driftZ = reduced ? 0 : Math.sin(t * 0.00013) * 20;
+      const camZ = 980;
+      const driftX = reduced ? 0 : Math.sin(t * 0.00016) * 46;
+      const driftY = reduced ? 0 : Math.cos(t * 0.00013) * 30;
+      const driftZ = reduced ? 0 : Math.sin(t * 0.00011) * 120;
 
       for (const n of nodes) {
-        const z = n.z + driftZ;
-        const depth = 420 / (420 + z + 420);
-        const sx = w * 0.5 + (n.x + driftX) * depth;
-        const sy = h * 0.5 + (n.y + driftY) * depth;
-        const radius = n.r * depth * 1.8;
+        const pz = n.z + driftZ;
+        const perspective = camZ / (camZ + pz + 1400);
+        const sx = w * 0.5 + (n.x + driftX) * perspective;
+        const sy = h * 0.5 + (n.y + driftY) * perspective;
+        const radius = n.r * perspective * 2.7;
 
-        if (sx < -30 || sx > w + 30 || sy < -30 || sy > h + 30) continue;
+        if (sx < -40 || sx > w + 40 || sy < -40 || sy > h + 40) continue;
 
-        const alpha = Math.max(0.06, Math.min(0.34, depth * 0.34));
-        const color = n.gold
-          ? `rgba(255,201,4,${alpha * 0.7})`
-          : `rgba(88,208,255,${alpha})`;
-
+        const alpha = Math.max(0.035, Math.min(0.23, perspective * 0.28));
+        ctx.fillStyle = n.gold ? `rgba(255,201,4,${alpha * 0.72})` : `rgba(88,208,255,${alpha})`;
         ctx.beginPath();
-        ctx.fillStyle = color;
         ctx.arc(sx, sy, radius, 0, Math.PI * 2);
         ctx.fill();
       }

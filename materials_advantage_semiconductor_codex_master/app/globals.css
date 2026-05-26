@@ -37,6 +37,6 @@ input,select{background:#0f1924;border:1px solid var(--line);color:var(--text);b
 .btn:hover{transform:translateY(-1px);background:rgba(69,207,255,.22)}
 .hero h1{letter-spacing:-.04em}
 
-.crystalCanvas{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.85}
-.contentLayer{position:relative;z-index:2}
+.crystalCanvas{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;pointer-events:none;opacity:.78}
+.contentLayer{position:relative;z-index:2;isolation:isolate}
 .section,.startBox,.templateBox,.resourceCard,.stepCard,.facultyCard,.decisionCard{backdrop-filter:blur(2px)}
