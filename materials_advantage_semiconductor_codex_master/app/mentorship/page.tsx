@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { ChecklistAccordion, MentorMeetingCard, PrincipleCard, ReadinessChecklist } from "../../src/components/ui";
-import { expectationColumns, firstMeetingChecklist, materialsReadiness, mentoringMeetings, mentoringPrinciples, mentoringSeminarGoals, mentorPhilosophyPrompts, mentorPhilosophyTemplate, understandingChecks, whyMentor } from "../../src/data/siteContent";
+import { ChecklistAccordion, MentorMeetingCard, PrincipleCard } from "../../src/components/ui";
+import { expectationColumns, firstMeetingChecklist, mentoringMeetings, mentoringPrinciples, mentoringSeminarGoals, mentorPhilosophyPrompts, mentorPhilosophyTemplate, understandingChecks, whyMentor } from "../../src/data/siteContent";
 
 export default function MentorshipPage() {
   return (
@@ -23,8 +23,6 @@ export default function MentorshipPage() {
       <section className="section"><h2>Good Mentoring Principles</h2><div className="decisionGrid">{mentoringPrinciples.map(([title,text])=><PrincipleCard key={title} title={title} text={text} />)}</div></section>
 
       <section className="section"><h2>Why Be a Mentor?</h2><div className="listCol">{whyMentor.map((x)=><article key={x} className="resourceCard"><p>{x}</p></article>)}</div></section>
-
-      <section className="section"><h2>Materials Science Research Readiness Checklist</h2><ReadinessChecklist title="Open materials readiness checklist" items={materialsReadiness} /></section>
 
       
 
