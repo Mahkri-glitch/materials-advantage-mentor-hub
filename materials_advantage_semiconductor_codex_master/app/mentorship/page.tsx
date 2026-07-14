@@ -7,9 +7,6 @@ export default function MentorshipPage() {
     <main>
       <section className="section pageIntro"><p className="kicker">Materials Advantage mentorship</p><h1>Mentorship Playbook</h1><p>A practical guide for undergraduate and graduate students building supportive mentoring relationships. </p></section>
       <section className="section sectionTight"><Link className="btn" href="/">← Back to Home</Link></section>
-
-      <section className="section"><h2>Mentoring is different from supervision</h2><p>Student mentors can share experience, offer encouragement, review goals, and connect mentees with resources. </p></section>
-
       <section className="section"><h2>First Meeting Relationship Checklist</h2><p>Use this checklist for graduate–undergraduate or peer relationships, and skip laboratory-specific items when the mentorship is focused on academics or careers.</p><ChecklistAccordion title="Open checklist" items={firstMeetingChecklist} label="First meeting tools" /></section>
 
       <section className="section"><h2>Goals of the Mentoring Seminar</h2><div className="decisionGrid">{mentoringSeminarGoals.map((g)=><article key={g} className="resourceCard"><p>{g}</p></article>)}</div></section>
