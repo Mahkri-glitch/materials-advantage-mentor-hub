@@ -45,7 +45,7 @@ export default function SemiconductorDocs() {
           {faculty.map((person) => (
             <article className="card" key={person.name}>
               <h3>{person.name}</h3>
-              <p className="dept">{person.department}</p>
+              <p className="dept">{person.title}</p>
               <p>{person.area}</p>
             </article>
           ))}
