@@ -5,7 +5,7 @@ import { expectationColumns, firstMeetingChecklist, mentoringMeetings, mentoring
 export default function MentorshipPage() {
   return (
     <main>
-      <section className="section"><h1>Mentorship Playbook</h1><p>Entering Mentoring inspired tools, adapted for Materials Advantage mentors and mentees.</p></section>
+      <section className="section"><h1>Mentorship Playbook</h1><p></p></section>
       <section className="section sectionTight"><Link className="btn" href="/">← Back to Home</Link></section>
 
       <section className="section"><h2>First Meeting Relationship Checklist</h2><ChecklistAccordion title="Open checklist" items={firstMeetingChecklist} label="First meeting tools" /></section>
