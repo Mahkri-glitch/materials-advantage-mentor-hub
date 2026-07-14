@@ -11,11 +11,10 @@ export const mentoringSeminarGoals = [
 
 export const firstMeetingChecklist = [
   "Make direct eye contact and be enthusiastic.",
-  "If relevant, introduce the mentee to the lab, organization, or academic community.",
   "Help them understand the environment and resources available to them.",
   "If the relationship involves research, discuss good documentation and lab-notebook habits.",
   "Talk about the mentee's bigger academic, research, or career goals.",
-  "Discuss relevant program, laboratory, and communication norms.",
+  "Discuss relevant programs, research laboratories, and important/ relevant ideas.",
   "Discuss the mentee's background.",
   "Get to know the mentee as a person.",
 ] as const;
@@ -40,7 +39,7 @@ export const mentorPhilosophyTemplate = [
 
 export const expectationColumns = {
   mentee: ["goals", "availability", "learning style", "research interests", "what feels confusing", "what success looks like"],
-  mentor: ["communication style", "expected time commitment", "lab culture", "how to ask for help", "what independence looks like", "realistic support scope"],
+  mentor: ["communication style", "how to ask for help", "realistic support scope"],
 } as const;
 
 export const mentoringMeetings = [
@@ -72,7 +71,7 @@ export const mentoringMeetings = [
       "Which technique, skill, or topic feels most challenging?",
       "Do you feel ready to work more independently?",
     ],
-    deliverable: ["Progress check", "Blockers + support plan", "Updated path for next month"],
+    deliverable: ["Progress check"],
   },
   {
     title: "Mentor Philosophy Meeting",
@@ -84,18 +83,11 @@ export const mentoringMeetings = [
       "What has been your biggest disappointment?",
       "What did you learn about working with your mentee that you did not expect?",
     ],
-    deliverable: ["Mentor reflection note", "One mentoring change to test", "Boundary and escalation reminders"],
+    deliverable: ["Mentor reflection note", "One mentoring change to test"],
   },
 ] as const;
 
 export const understandingChecks = [
-  "Have the mentee explain the project back to you.",
-  "Have them explain it to another undergraduate.",
-  "Have them draw a flowchart or diagram.",
-  "Have them write a short paragraph describing the project.",
-  "Ask another lab member to ask the student to explain the project.",
-  "Give worksheets or paper-reading prompts.",
-  "If a student makes a claim, ask them to verify it through literature.",
 ] as const;
 
 export const mentoringPrinciples = [
