@@ -40,3 +40,12 @@ input,select{background:#0f1924;border:1px solid var(--line);color:var(--text);b
 .crystalCanvas{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;pointer-events:none;opacity:.78}
 .contentLayer{position:relative;z-index:2;isolation:isolate}
 .section,.startBox,.templateBox,.resourceCard,.stepCard,.facultyCard,.decisionCard{backdrop-filter:blur(2px)}
+.pageIntro{padding:1.35rem;border:1px solid rgba(69,207,255,.16);background:linear-gradient(145deg,rgba(69,207,255,.08),rgba(255,201,4,.035))}
+.pageIntro p{max-width:72ch}.sourceNote{font-size:.92rem;color:#96a9bc}
+.sectionHeading{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:.75rem}
+.countPill{white-space:nowrap;border:1px solid var(--line);border-radius:999px;padding:.2rem .6rem;color:var(--muted);font-size:.78rem}
+.resourceGrid,.timelineGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}
+.resourceCard{display:flex;flex-direction:column}.resourceCard .textLink,.resourceCard>a{margin-top:auto;padding-top:.45rem;font-weight:650}
+.actionPanel{display:flex;align-items:center;justify-content:space-between;gap:1.2rem;border:1px solid rgba(255,201,4,.2);background:linear-gradient(130deg,rgba(255,201,4,.07),rgba(69,207,255,.045))}.actionPanel>div:first-child{max-width:58ch}
+.companyTable{display:grid;border-top:1px solid var(--line)}.companyRow{display:grid;grid-template-columns:minmax(170px,.8fr) 1.6fr;gap:1rem;padding:.8rem .2rem;border-bottom:1px solid var(--line)}.companyRow p{margin:.1rem 0}
+@media(max-width:800px){.resourceGrid,.timelineGrid{grid-template-columns:1fr}.sectionHeading,.actionPanel{align-items:flex-start;flex-direction:column}.companyRow{grid-template-columns:1fr;gap:.2rem}}
