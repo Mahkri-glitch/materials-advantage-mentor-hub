@@ -10,12 +10,12 @@ export const researchResources = [
 ] as const;
 
 export const researchPlan = [
-  { title: "Choose a direction", text: "Write down two materials topics, techniques, or applications you are genuinely curious about. You only need a starting point." },
-  { title: "Build a short lab list", text: "Use the MSE lab and faculty directories to identify three groups. Read the lab summary and one current project before contacting anyone." },
+  { title: "Choose a direction", text: "Write down a couple of materials topics, techniques, or applications you are genuinely curious about as a starting point." },
+  { title: "Build a short lab list", text: "Use the MSE lab and faculty directories to identify three groups. Read the lab summary and one current project or published paper before contacting." },
   { title: "Prepare a focused message", text: "Explain why that specific work interests you, what relevant preparation you have, and ask for a short conversation about possible undergraduate involvement." },
   { title: "Follow up once", text: "If there is no response, send one polite follow-up after roughly 10–14 days. Continue exploring other groups instead of waiting on one answer." },
   { title: "Discuss expectations", text: "Before joining, clarify time commitment, supervision, training, project scope, safety requirements, and what a successful first semester looks like." },
-  { title: "Fund and extend the work", text: "Once you have a mentor and project direction, investigate OUR grants, SURF, Federal Work Study, REUs, and national-laboratory programs." },
+  { title: "Fund and extend the work", text: "Once you have a mentor and project direction, investigate OUR grants, SURF, Federal Work Study, REUs, and national-laboratory programs for future research opportunities." },
 ] as const;
 
 export const semiconductorResources = [
