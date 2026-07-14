@@ -26,17 +26,20 @@ export const semiconductorResources = [
   { title: "PREM at UCF", group: "Research and mentoring", description: "Materials research and mentoring pathways connected to the UCF–UChicago PREM partnership.", url: "https://prem2.cecs.ucf.edu/" },
 ] as const;
 
-export const companies = [
-  { name: "Intel", type: "IDM / manufacturing", roles: "Process, yield, integration, equipment, materials" },
-  { name: "GlobalFoundries", type: "Foundry", roles: "Process engineering, integration, yield, metrology" },
-  { name: "TSMC", type: "Foundry", roles: "Manufacturing, process, facilities, equipment, integration" },
-  { name: "Micron", type: "Memory / IDM", roles: "Process development, yield, thin films, characterization" },
-  { name: "Applied Materials", type: "Equipment", roles: "Process, hardware, applications, materials, modeling" },
-  { name: "Lam Research", type: "Equipment", roles: "Deposition, etch, clean, process and equipment engineering" },
-  { name: "ASML", type: "Lithography equipment", roles: "Optics, mechatronics, applications, systems, materials" },
-  { name: "KLA", type: "Metrology / inspection", roles: "Optics, algorithms, applications, process control" },
-  { name: "Tokyo Electron", type: "Equipment", roles: "Process, field service, applications, equipment engineering" },
-  { name: "SkyWater Technology", type: "Foundry", roles: "Process development, integration, yield, advanced packaging" },
+export const semiconductorWork = [
+  { title: "Process and manufacturing", explanation: "Develops and controls steps such as deposition, etch, lithography, diffusion, clean, and CMP so millions of devices can be fabricated consistently.", jobs: "Process engineer, module engineer, equipment engineer, manufacturing engineer, yield engineer", research: "ALD/CVD, plasma etching, surface chemistry, contamination, process integration, statistical process control" },
+  { title: "Materials and devices", explanation: "Connects a material's composition, structure, defects, and interfaces to transistor, memory, sensor, power, or optoelectronic performance.", jobs: "Device engineer, materials engineer, characterization engineer, reliability engineer, integration engineer", research: "Wide-bandgap semiconductors, 2D materials, dielectrics, contacts, defects, transport, device physics" },
+  { title: "Design and computing", explanation: "Turns system requirements into circuits and chip layouts, then verifies that the design can be manufactured and performs as intended.", jobs: "Digital/analog design engineer, verification engineer, physical-design engineer, EDA engineer", research: "Computer architecture, RF/analog circuits, hardware accelerators, design automation, design-technology co-optimization" },
+  { title: "Quantum and photonics", explanation: "Uses electronic, optical, and quantum behavior to create lasers, detectors, integrated optics, quantum devices, and sensing platforms.", jobs: "Photonics engineer, optical engineer, device-fabrication engineer, quantum hardware engineer", research: "Integrated photonics, compound semiconductors, quantum emitters, detectors, optical coatings, nanofabrication" },
+  { title: "Data and AI", explanation: "Uses manufacturing, metrology, and test data to detect drift, predict failure, optimize recipes, and accelerate materials or device discovery.", jobs: "Yield/data engineer, process-control engineer, ML engineer, computational materials scientist", research: "Virtual metrology, anomaly detection, predictive maintenance, materials informatics, autonomous experimentation" },
+  { title: "Packaging and integration", explanation: "Connects finished dies to power, cooling, signals, and other chips while protecting them from mechanical and environmental failure.", jobs: "Packaging engineer, thermal engineer, reliability engineer, assembly/process engineer", research: "Chiplets, 2.5D/3D integration, interposers, bonding, thermal management, solder, failure analysis" },
+] as const;
+
+export const companyGroups = [
+  { id: "fabless", label: "Fabless — chip design", description: "Design chips and outsource wafer fabrication to foundries.", roles: "Circuit design, verification, architecture, product, applications, test", companies: ["NVIDIA", "AMD", "Qualcomm", "Broadcom", "Marvell", "MediaTek", "Apple Silicon", "Google Silicon", "Amazon Annapurna Labs", "Microsoft Silicon", "Synopsys", "Cadence"] },
+  { id: "foundry", label: "Foundries — manufacturing", description: "Manufacture chips designed by customers, requiring tight process control and high-volume yield.", roles: "Process, integration, yield, equipment, metrology, facilities", companies: ["TSMC", "GlobalFoundries", "UMC", "SMIC", "Tower Semiconductor", "SkyWater Technology", "Samsung Foundry", "Intel Foundry", "DB HiTek", "PSMC", "VIS"] },
+  { id: "idm", label: "IDMs — design + manufacturing", description: "Design and manufacture their own semiconductor products, sometimes also providing foundry services.", roles: "Device, process, design, product, yield, reliability, manufacturing", companies: ["Intel", "Samsung Electronics", "Micron", "Texas Instruments", "STMicroelectronics", "Infineon", "NXP", "onsemi", "SK hynix", "Analog Devices", "Microchip Technology", "Renesas", "Wolfspeed", "Sony Semiconductor Solutions"] },
+  { id: "equipment", label: "Equipment manufacturers", description: "Build the deposition, etch, lithography, metrology, implant, clean, and packaging tools used inside fabs.", roles: "Process applications, hardware, systems, field service, optics, controls", companies: ["Applied Materials", "Lam Research", "ASML", "KLA", "Tokyo Electron", "ASM International", "SCREEN Semiconductor Solutions", "Axcelis", "Onto Innovation", "Veeco", "Kulicke & Soffa", "Besi", "Canon", "Nikon Precision"] },
 ] as const;
 
 export const conferences = [
