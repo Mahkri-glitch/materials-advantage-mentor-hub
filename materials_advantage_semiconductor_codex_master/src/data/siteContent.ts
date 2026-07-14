@@ -6,15 +6,16 @@ export const mentoringSeminarGoals = [
   "Stimulate creativity, independence, and confidence",
   "Support different learning styles and experiences",
   "Build a mentor community by sharing challenges and solutions",
+  "Support mentoring across undergraduate and graduate degree levels",
 ] as const;
 
 export const firstMeetingChecklist = [
   "Make direct eye contact and be enthusiastic.",
-  "Introduce the mentee to the lab and lab mates.",
-  "Acquaint them with the building/lab environment.",
-  "Help them start a lab notebook.",
-  "Talk about the big picture of the project.",
-  "Discuss lab policies and norms.",
+  "If relevant, introduce the mentee to the lab, organization, or academic community.",
+  "Help them understand the environment and resources available to them.",
+  "If the relationship involves research, discuss good documentation and lab-notebook habits.",
+  "Talk about the mentee's bigger academic, research, or career goals.",
+  "Discuss relevant program, laboratory, and communication norms.",
   "Discuss the mentee's background.",
   "Get to know the mentee as a person.",
 ] as const;
@@ -45,7 +46,7 @@ export const expectationColumns = {
 export const mentoringMeetings = [
   {
     title: "Initial Mentor-Mentee Meeting",
-    purpose: "Get to know one another, define the relationship, establish expectations, and define early research/career goals.",
+    purpose: "Get to know one another, define the relationship, establish expectations, and identify early academic, research, or career goals.",
     whenToUse: "Week 1-3 of the mentoring cycle.",
     questions: [
       "Who are you and what brought you to Materials Science?",
@@ -63,10 +64,10 @@ export const mentoringMeetings = [
     purpose: "Reaffirm expectations, identify what is working, identify what is unclear, and update the student's path.",
     whenToUse: "Midpoint of semester or after 4-6 weeks.",
     questions: [
-      "What do you like best about working in the lab so far?",
+      "What has been most useful or enjoyable in the mentorship so far?",
       "What has been most challenging?",
       "What have you learned that you did not expect?",
-      "Are you comfortable interacting with lab members?",
+      "Do you feel comfortable asking questions and interacting with the relevant community?",
       "What parts of the project or career path are still unclear?",
       "Which technique, skill, or topic feels most challenging?",
       "Do you feel ready to work more independently?",
