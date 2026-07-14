@@ -17,8 +17,6 @@ export default function MentorshipPage() {
 
       <section className="section"><h2>Three Meeting System</h2><div className="listCol">{mentoringMeetings.map((m)=><MentorMeetingCard key={m.title} {...m} />)}</div></section>
 
-      <section className="section"><h2>How Do You Know If They Understand?</h2><ChecklistAccordion title="Mentor understanding checks" items={understandingChecks} label="Mentor tools" /></section>
-
       <section className="section"><h2>Good Mentoring Principles</h2><div className="decisionGrid">{mentoringPrinciples.map(([title,text])=><PrincipleCard key={title} title={title} text={text} />)}</div></section>
 
       <section className="section"><h2>Why Be a Mentor?</h2><div className="listCol">{whyMentor.map((x)=><article key={x} className="resourceCard"><p>{x}</p></article>)}</div></section>
