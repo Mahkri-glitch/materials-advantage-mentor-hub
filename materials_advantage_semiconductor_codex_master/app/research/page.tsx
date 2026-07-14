@@ -4,7 +4,7 @@ import { researchPlan, researchResources } from "../../src/data/researchResource
 export default function ResearchPage() {
   return (
     <main>
-      <section className="section pageIntro"><p className="kicker">UCF undergraduate research guide</p><h1>Enter research with a plan</h1><p>Research is not only preparation for graduate school. It helps you test a field, develop technical judgment, build relationships with mentors, and explain how you approach problems to future employers.</p><p className="sourceNote">Start with the sequence below, then use the official resources to verify requirements and current deadlines.</p></section>
+      <section className="section pageIntro"><p className="kicker">UCF undergraduate research guide</p><h1>Enter research with a plan</h1><p></p><p className="sourceNote">Start with the sequence below, then use the official resources to verify requirements and current deadlines.</p></section>
       <section className="section sectionTight"><Link className="btn" href="/">← Back to Home</Link></section>
       <section className="section">
         <p className="kicker">Why participate?</p>
